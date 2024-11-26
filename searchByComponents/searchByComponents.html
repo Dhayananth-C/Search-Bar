@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-13-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+ 
+            <lightning-card title="Search Lease Contracts" icon-name="standard:contract">
+                <div class="slds-m-around_medium">
+                    <!-- Search Inputs -->
+                    <lightning-input label="Search by Tenant Name"  onchange={handleTenantSearch}></lightning-input>
+                    <lightning-input label="Search by Building Name"  onchange={handleBuildingSearch}></lightning-input>
+                    <lightning-button label="Search" onclick={handleSearch}></lightning-button>
+                </div>
+        
+                <template if:true={Records}>
+
+                    <lightning-datatable
+                        data={Records}
+                        columns={columnsList}
+                        key-field="Id"
+                        >
+                    </lightning-datatable>
+                </template>
+        
+              
+        
+
+
+    </lightning-card>
+</template>
